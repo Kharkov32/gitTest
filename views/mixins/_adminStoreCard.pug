@@ -1,0 +1,29 @@
+mixin adminStoreCard(store = {})
+  .store
+    .store__hero
+      if store.photo !== undefined
+        img(src=`https://s3.amazonaws.com/cbdoilmaps-public-images/stores/${store.photo}`)
+      else
+        img(src=h.staticMap(store.location.coordinates))
+
+    .store__details
+      h2.storeCardTitle
+        a(href=`/store/${store.slug}`) #{store.name}
+      p= store.location.address
+      p= store.website
+      p
+        a(href=`/admin/store/${store.slug}`)
+          input.button(type="submit" value="REVIEWS")
+      p
+        a(href=`/admin/store/${store.slug}/products`)
+          input.button(type="submit" value="PRODUCTS")
+      p
+        a(href=`/admin/store/alts/${store.slug}`)
+          input.button(type="submit" value="ALT TAGS")
+
+      form.form(style="margin-top:0; padding: 1rem;" action=`/api/store/promote/${store._id}/${store.author}` method="POST")
+        input.button(type="submit" value="PROMOTE")
+      form.form(style="margin-top:0; padding: 1rem;" action=`/api/store/demote/${store._id}/${store.author}` method="POST")
+        input.button(type="submit" value="DEMOTE")
+      form.form(style="margin-top:0; padding: 1rem;" action=`/admin/store/${store._id}` method="POST")
+        input.button(style="background-color:#af0000;" type="submit" value="DELETE")

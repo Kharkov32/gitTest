@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/_adminStoreCard
+include mixins/_adminPagination
+
+block content
+  .inner
+    h2 Stores Administration
+    p(style="color: red;") WARNING!!! Everything you do on this page is permanent AND NON-REVERSIBLE
+    .stores
+      each store in stores
+        +adminStoreCard(store)
+    if (page)
+      +pagination(page, pages, count)

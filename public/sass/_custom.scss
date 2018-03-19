@@ -1,0 +1,252 @@
+h4.h4 {
+  font-size: 22px;
+  color: white;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.brand__map {
+  width: 360px;
+  height: 158px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  float: right;
+  margin: -144px 0 0;
+  margin: -144px 0 0;
+  position: relative;
+}
+
+.brand__avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  float: left;
+  margin: -144px 0 0;
+  
+  .preview {
+    color: #fff;
+    margin: 28px 10px 0;
+    // margin-top: -50px;
+    // background-color: rgba(0, 0, 0, .3);
+    h2 {
+      a {
+        color: #fff;
+      }
+      padding: 0;
+      margin: 0;
+      font-size: 30px;
+    }
+    p {
+      margin: 0;
+    }
+    .review__stars {
+      margin-right: 10px;
+    }
+  }
+}
+.brand__avatar img {
+  box-shadow: 0 0px 2px 3px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #FFF;
+}
+
+.brand__map--top {
+  flex: 3;
+  h4 {
+    position: absolute;
+    top: -60px;
+    left: 15px;
+    span {
+      color: #ED8F03;
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 158px;
+  }
+}
+
+.brand__map--bottom {
+  flex: 1;
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // p {
+  //   margin: 0;
+  //   // padding: 1em 0;
+  //   font-size: 14px;
+  // }
+  .button {
+    display: block;
+    text-align: center;
+    width: 85%;
+    height: 43px;
+    line-height: 43px;
+    margin: 0 auto;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
+.single__hero {
+  -webkit-clip-path: none;
+  clip-path: none;
+  z-index: 0;
+}
+p.clearfix {
+  clear: both;
+}
+
+.single__hero:before {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+// products custom styles
+.product > .product__details {
+  text-align: center;
+  padding: .3em;
+  .storeCardTitle {
+    font-size: 14px;
+  }
+  p{
+    font-size: 12px;
+  }
+  img{
+    height: 100%;
+  }
+}
+
+.product {
+  flex-basis: calc(20% - 10px);
+  // border-radius: 5px;
+  overflow: hidden;
+  margin-left: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  &:first-child {
+    margin-left: 0px;
+  }
+}
+.products , .stores {
+  justify-content: flex-start;
+}
+
+.products.tabcontent.open {
+  width: 100%;
+}
+
+.product__hero:before {
+  content: none;
+}
+
+.product__hero img {
+  position: static;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  object-fit: contain;
+}
+
+.hero__button{
+  background: #ED8F03;
+  z-index: 100;
+  line-height: 40px;
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  top: 15px; 
+  left: 15px;
+}
+.hero__button__edit{
+  left: 170px;
+}
+
+.details {
+  color: #000;
+  // text-align: center; 
+  p.address {
+    margin-top: -7px;
+  }
+}
+
+
+@media (max-width: 651px){
+  .nav__link.nav__link--logo {
+    width: 121px;
+  }
+}
+
+
+// unoptimized changes to stores page 
+.store{
+  width: calc(20% - 8px);
+}
+
+.store{
+  margin-right: 10px; 
+  &:nth-child(5n){
+    margin-right: 0 ;
+  }
+}
+
+// no breaking changes delete stores 80L for optimization
+.store__hero img {
+    height: auto;
+    width: auto;
+    top: 0;
+    right: 0;
+    position: static;
+    left: 0;
+    object-fit: cover;
+}
+
+.store__actions{
+  // position: absolute;
+  // left: calc(50% - 10px);
+  padding: 0;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.store{
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.store__details{
+  padding: 0.5rem;  
+  text-align: center;
+  border-top: 1px solid #eee;
+  p{
+    margin: 1rem 0;
+  }
+}
+
+.store__button{
+  display: inline-block;
+  padding: 0.5rem;
+  // margin: 10px auto;
+}
+
+.store__hero img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

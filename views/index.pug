@@ -1,0 +1,23 @@
+extends layout
+
+include mixins/_storeCard
+include mixins/_promotedStoreCard
+
+block content
+  .inner
+    h2(style='color:#ED8F03;margin-bottom: 5px;')= title
+    if top
+      .stores
+        each store in top
+          +storeCard(store.store)
+        if banner
+          h2(style='color:#ED8F03;margin-bottom: 5px;') Featured Store
+          .promoted
+            +promotedStoreCard(banner.store)
+      if bottom.length > 0
+        h2(style='color:#ED8F03;margin-bottom: 5px;') Featured Wholesalers
+        .stores
+          each store in bottom
+            +storeCard(store.store)
+    else
+      p No stores found
